@@ -22,7 +22,7 @@ function Login() {
 	.then((response) => response.json())
 	.then((data) => {
 		console.log(data)
-		// window.location.href = '/'
+		window.location.href = '/'
 	})
       .catch((err) => {
         console.log(err);
