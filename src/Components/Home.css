@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+* {
+	box-sizing: border-box;
+	font-family: Raleway, sans-serif;
+}
+
+body {
+	background: linear-gradient(90deg, #C7C5F4, #776BCC);		
+}
+
+
+

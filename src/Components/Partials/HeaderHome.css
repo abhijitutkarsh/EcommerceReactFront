@@ -1,0 +1,44 @@
+#header{
+    display: flex;
+    float:none;
+    /* display: inline-block; */
+}
+#carti{
+    /* position: relative; */
+    font-size: 35px;
+cursor: pointer;
+    float: right;
+    margin-right:18px;
+    /* margin-top: -32px; */
+}
+#user{
+    cursor: pointer;
+    margin-right:18px;
+
+    float:right;
+    /* margin-top: -32px; */
+}
+#userLogin{
+    float:right;
+    /* margin-left: -40px; */
+    width: 0%;
+    padding-right: 1px;
+    margin-top: 26px;
+}
+.head{
+    background-color: white;
+    height: 56px;
+}
+
+.badge:after{
+    content:attr(value);
+    font-size:20px;
+    color: #fff;
+    background: red;
+    border-radius:50%;
+    padding: 0 5px;
+    position:relative;
+    left:-8px;
+    top:-10px;
+    opacity:0.9;
+}
