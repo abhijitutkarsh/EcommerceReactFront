@@ -35,7 +35,7 @@ function HeaderHome(props) {
   function logout()
   {
     console.log("preesed")
-    fetch('http://localhost:3001/logout',{credentials: "include"})
+    fetch('https://ecommerce370000.herokuapp.com/logout',{credentials: "include"})
     .then(res => res.json())
     .then(
       (result) => {
@@ -57,7 +57,7 @@ useEffect(()=>{
   {
   var data = {email:props.sess.user.email}
   // var body = {"email": props.sess.user.email}
-fetch('http://localhost:3001/cartCount',{
+fetch('https://ecommerce370000.herokuapp.com/cartCount',{
   method: "POST",
   body: JSON.stringify(data),
   headers: {

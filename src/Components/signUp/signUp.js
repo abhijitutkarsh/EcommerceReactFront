@@ -22,7 +22,7 @@ function SignUp(){
 			password:e.target[3].value 
 		  }
 		//   console.log(data)
-		  fetch('http://localhost:3001/signup', {
+		  fetch('https://ecommerce370000.herokuapp.com/signup', {
 			method: 'POST',
 			body: JSON.stringify(data),
 			headers: {

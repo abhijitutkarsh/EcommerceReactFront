@@ -12,7 +12,7 @@ function Cart(props) {
       // console.log(props.sess.user)
       var data = { email: props.sess.user.email };
       // var body = {"email": props.sess.user.email}
-      fetch("http://localhost:3001/cartData", {
+      fetch("https://ecommerce370000.herokuapp.com/cartData", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
@@ -99,7 +99,7 @@ function Cart(props) {
                       var body = {
                         cartId: t._id,
                       };
-                      fetch("http://localhost:3001/deletecart", {
+                      fetch("https://ecommerce370000.herokuapp.com/deletecart", {
                         method: "POST",
                         body: JSON.stringify(body),
                         headers: {
@@ -133,7 +133,7 @@ function Cart(props) {
                         email: props.sess.user.email,
                         cartId: t._id,
                       };
-                      fetch("http://localhost:3001/cart", {
+                      fetch("https://ecommerce370000.herokuapp.com/cart", {
                         method: "POST",
                         body: JSON.stringify(body),
                         headers: {

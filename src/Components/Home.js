@@ -11,7 +11,7 @@ function Home(props)
 {
  
 
-  // console.log(props.sess)
+  
  const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
