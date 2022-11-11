@@ -46,10 +46,9 @@ function Login(props) {
   }, []);
   return (
     <>
-        <HeaderHome sess={props.sess} cartCount={props.cartCount} setCartCount={props.setCartCount}/>
-        <br>
-        </br>
-        <br></br>
+        {/* <br> */}
+        {/* </br> */}
+        {/* <br></br> */}
 
     <div className="container">
       

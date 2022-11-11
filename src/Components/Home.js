@@ -12,13 +12,11 @@ function Home(props)
  
 
   
- const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [items, setItems] = useState([]);
+ 
 
-  useEffect(()=>{
-   getProducts();
-  },[]);
+  // useEffect(()=>{
+  //  getProducts();
+  // },[]);
 
   // var [sess,setSess] = useState({});
   // useEffect(() => {
@@ -81,34 +79,13 @@ function Home(props)
           console.log(err.message);
        });
   }
-
-  // const [cartCount, setCartCount] = useState('0')
-
- function getProducts(){
-
-    fetch("https://ecommerce370000.herokuapp.com/product")
-      .then(res => res.json())
-      .then(
-        (result) => {
-          setIsLoaded(true);
-          setItems(result);
-        // console.log(result)
-        },
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      )
-
-
-  return;
-}
+  
 
 
 
-  if (error) {
+  if (props.error) {
     return <div><h1>Server is down</h1></div>;
-  } else if (!isLoaded) {
+  } else if (!props.isLoaded) {
     return (<div class="loading-container">
     <div class="loading"></div>
     <div id="loading-text">loading</div>
@@ -118,12 +95,19 @@ function Home(props)
     return (
       <>
 
-        <HeaderHome sess={props.sess} cartCount={props.cartCount} setCartCount={props.setCartCount}/>
 
 
-        <h1 id="quote"><b>Your<br/> First Choice</b></h1>
+        <h1 id="quote" ><div class="offset-header">
+  <h1 class="hero-header">
+    {/* <span class="offset-header offset-header-odd"><span>Elevate your space</span></span> */}
+    <span class="offset-header offset-header-even"><span><b>Your<br/> First Choice</b></span></span>
+  </h1>
+</div></h1>
+  
+
       <form onSubmit={load}>
-       {items.map((todo,index) => (
+<span class="anima anima-even"><span>
+       {props.items.map((todo,index) => (
          <Item name={todo.name} thumbnail={todo.thumbnail} _id={todo._id} category={todo.category} price={todo.price} rating = {todo.rating} key={index} sess={props.sess}
          cartCount={props.cartCount} setCartCount={props.setCartCount} />
          ))}
@@ -135,7 +119,9 @@ function Home(props)
             })
           })}
          <div id="divloadmore"> <button type="submit" id="loadMore">Load More</button></div>
+  </span></span>
           </form>
+
       </>
     );
   }}

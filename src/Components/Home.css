@@ -7,7 +7,7 @@
 }
 
 body {
-	background: linear-gradient(90deg, #C7C5F4, #776BCC);
+	background: linear-gradient(90deg, #f2f1f5, #f4f4f6);
 }
 
 
@@ -270,7 +270,7 @@ body {
 
 .loading {
 	border: 2px solid transparent;
-	border-color: transparent #fff transparent #FFF;
+	border-color: transparent rgb(197, 44, 44) transparent rgb(242, 217, 229);
 	-moz-animation: rotate-loading 1.5s linear 0s infinite normal;
 	-moz-transform-origin: 50% 50%;
 	-o-animation: rotate-loading 1.5s linear 0s infinite normal;
@@ -299,7 +299,7 @@ body {
 	-o-animation: loading-text-opacity 2s linear 0s infinite normal;
 	-webkit-animation: loading-text-opacity 2s linear 0s infinite normal;
 	animation: loading-text-opacity 2s linear 0s infinite normal;
-	color: #ffffff;
+	color: #c10d0d;
 	font-family: "Helvetica Neue, " Helvetica", " "arial";
 	font-size: 10px;
 	font-weight: bold;
@@ -315,13 +315,64 @@ body {
 /* Loading css ^|////////////////////////////////////////////// */
 
 #quote {
-	font-size: 4rem;
+	font-size: 2rem;
 
 	margin-left: 100px;
 	/* text-align: center; */
 	font-weight: 900;
 	font-family: 'Montserrat', sans-serif;
+	transform: translateY(80px);
+    animation: slideUp .5s ease forwards .4s;
 }
+/* ////////////////////////////////////////////////////////////// */
+/* .offset-header {
+	font-family: Outfit;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 42px;
+	line-height: 44px;
+	letter-spacing: -0.02em;
+	max-width: 500px;
+	margin: 10px 0;
+	} */
+  
+	span.offset-header {
+	  display: block;
+	  overflow: hidden;
+	}
+	span.offset-header > span {
+	  animation-name: slideUp;
+	  animation-duration: 0.5s;
+	  animation-timing-function: ease-in;
+	  display: block;
+	}
+	.offset-header-odd > span {
+	  /* text-align: left; */
+	  animation-delay: 0s;
+	  animation-fill-mode: forwards;
+	}
+	.offset-header-even > span {
+	  /* text-align: right; */
+	  animation-delay: 150ms;
+	  animation-fill-mode: both;
+	}
+  
+	@keyframes slideUp {
+	  0%,
+	  50% {
+		transform: translateY(100%);
+		opacity: 0;
+	  }
+	   
+	  60%,
+	  100% {
+		transform: translateY(0);
+		opacity: 1;
+	  
+	  }
+	}
+	/* ///////////////////////////////////////////////////// */
+  
 
 #loadMore {
 	text-align: center;
@@ -336,7 +387,103 @@ body {
 	border-radius: 7px;
 	font-family: 'Montserrat', sans-serif;
 	
+	
 }
 #divloadmore{
 	text-align: center;
 }
+
+/* //////////////////////////////////////// */
+/* .anima {
+	font-family: Outfit;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 42px;
+	line-height: 44px;
+	letter-spacing: -0.02em;
+	max-width: 500px;
+	margin: 10px 0;
+	} */ */
+
+	span.anima {
+	  display: block;
+	  overflow: hidden;
+	}
+	span.anima > span {
+	  animation-name: slidefor;
+	  animation-duration: 2s;
+	  animation-timing-function: ease-in;
+	  display: block;
+	}
+	.anima-odd > span {
+	  /* text-align: left; */
+	  animation-delay: 0s;
+	  animation-fill-mode: forwards;
+	}
+	.anima-even > span {
+	  /* text-align: right; */
+	  animation-delay: 50ms;
+	  animation-fill-mode: both;
+	}
+  
+	@keyframes slidefor {
+	  0%,
+	  50% {
+		transform: translateX(100%);
+		opacity: 0;
+	  }
+	   
+	  60%,
+	  100% {
+		transform: translateY(0);
+		opacity: 1;
+	  
+	  }
+	}
+	/* /////////////////////////////////////////////////left */
+	/* .anima {
+	font-family: Outfit;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 42px;
+	line-height: 44px;
+	letter-spacing: -0.02em;
+	max-width: 500px;
+	margin: 10px 0;
+	} */ */
+
+	span.leftanima {
+		display: block;
+		overflow: hidden;
+	  }
+	  span.leftanima > span {
+		animation-name: slidefor;
+		animation-duration: 2s;
+		animation-timing-function: ease-in;
+		display: block;
+	  }
+	  .leftanima-odd > span {
+		/* text-align: left; */
+		animation-delay: 0s;
+		animation-fill-mode: forwards;
+	  }
+	  .leftanima-even > span {
+		/* text-align: right; */
+		animation-delay: 50ms;
+		animation-fill-mode: both;
+	  }
+	
+	  @keyframes slidefor {
+		0%,
+		50% {
+		  transform: translateX(-100%);
+		  opacity: 0;
+		}
+		 
+		60%,
+		100% {
+		  transform: translateY(0);
+		  opacity: 1;
+		
+		}
+	  }

@@ -2,9 +2,10 @@ import Home from './Components/Home'
 import Login from './Components/Login/Login'
 import SignUp from './Components/signUp/signUp'
 import react,{useEffect, useState} from 'react';
-
+import HeaderHome from './Components/Partials/HeaderHome';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Cart from './Components/cart/Cart';
+import ProductDetails from './Components/productDetail/ProductDetails';
 
 function App() {
 
@@ -34,10 +35,37 @@ function App() {
       });
   }, []);
   const [cartCount, setCartCount] = useState('0')
+  const [items, setItems] = useState([]);
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  // function getProducts(){
+ useEffect(()=>{
+  fetch("https://ecommerce370000.herokuapp.com/product")
+  .then(res => res.json())
+  .then(
+    (result) => {
+      setIsLoaded(true);
+      setItems(result);
+    // console.log(result)
+    },
+    (error) => {
+      setIsLoaded(true);
+      setError(error);
+    }
+  )
 
+ },[])
+     
+ 
+  //  return;
+//  }
 
   return (
+
+
     <div className="App">
+
+
       		 <Router>
     {/* <div className="nav-bar">
       <Link to="/">Home</Link>
@@ -46,15 +74,17 @@ function App() {
 
      
     </div> */}
+        <HeaderHome sess={sess} cartCount={cartCount} setCartCount={setCartCount}/>
+
     <Routes>
       {/* Exact match to avoid 
           overriding other routes */}
-      <Route exact path="/" element={<Home sess={sess} setSess={setSess} cartCount={cartCount} setCartCount={setCartCount}/>}/>
+      <Route exact path="/" element={<Home error={error} isLoaded={isLoaded} items = {items} sess={sess} setSess={setSess} cartCount={cartCount} setCartCount={setCartCount}/>}/>
      
       <Route path="/login" element = {<Login sess={sess} setSess={setSess} cartCount={cartCount} setCartCount={setCartCount}/>}/>
       <Route path="/signup" element = {<SignUp sess={sess} setSess={setSess} cartCount={cartCount} setCartCount={setCartCount}/>}/>
       <Route path="/cart" element = {<Cart sess={sess} setSess={setSess} cartCount={cartCount} setCartCount={setCartCount}/>}/>
-      
+      <Route path="/productDetail/:productId" element ={<ProductDetails items ={items} sess={sess} setSess={setSess} cartCount={cartCount} setCartCount={setCartCount}/>}/>
 
     </Routes>
   </Router>

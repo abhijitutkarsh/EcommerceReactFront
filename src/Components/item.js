@@ -1,4 +1,6 @@
 import React from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+
 
 function Item(todo) {
   const ratingTime = (x) => {
@@ -38,7 +40,8 @@ function Item(todo) {
         console.log(err);
       });
   }
-
+let Navigate = useNavigate();
+let {} = useParams();
   return (
     <div className="column">
       {/* <form onClick={addCart}> */}
@@ -48,13 +51,17 @@ function Item(todo) {
             <div class="card">
               <div class="card-body">
                 <div class="card-img-actions">
-                  <img
+                 <img
                     src={todo.thumbnail}
                     class="card-img img-fluid"
                     width="96"
                     height="350"
                     alt=""
+                    onClick={()=>{
+                      Navigate(`/productDetail/${todo._id}`,{state:{todo: todo}})
+                    }}
                   />
+                 
                 </div>
               </div>
 

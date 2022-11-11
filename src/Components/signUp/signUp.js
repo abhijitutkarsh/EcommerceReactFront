@@ -45,10 +45,9 @@ function SignUp(props){
 
     return (
 		<>
-		    <HeaderHome sess={props.sess} cartCount={props.cartCount} setCartCount={props.setCartCount}/>
-        <br>
-        </br>
-        <br></br>
+        {/* <br> */}
+        {/* </br> */}
+        {/* <br></br> */}
         <div className="container">
 	<div className="screen">
 		<div className="screen__content">

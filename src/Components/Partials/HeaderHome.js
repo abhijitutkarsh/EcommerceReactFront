@@ -49,7 +49,7 @@ function HeaderHome(props) {
 
   var loginOrNot;
   if (props.sess.isLoggedIn)
-    loginOrNot = <button onClick={logout}>Logout</button>;
+    loginOrNot = <div onClick={logout} id="logout">Logout</div>;
   else loginOrNot = <Link to="/login">Login</Link>;
 
 useEffect(()=>{

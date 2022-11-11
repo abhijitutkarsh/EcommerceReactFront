@@ -4,23 +4,28 @@
     /* display: inline-block; */
 }
 #carti{
-    /* position: relative; */
+    position: absolute;
     font-size: 35px;
 cursor: pointer;
-    float: right;
+    /* float: right; */
+    right: 5%;
     margin-right:18px;
     /* margin-top: -32px; */
 }
 #user{
     cursor: pointer;
     margin-right:18px;
-
-    float:right;
+    /* z-index: 9; */
+    position: absolute;
+    /* float:right; */
+    right:10%
     /* margin-top: -32px; */
 }
 #userLogin{
     float:right;
     /* margin-left: -40px; */
+    position: absolute;
+    right: 24%;
     width: 0%;
     padding-right: 1px;
     margin-top: 26px;
@@ -28,6 +33,7 @@ cursor: pointer;
 .head{
     background-color: white;
     height: 56px;
+    /* z-index: 9; */
 }
 
 .badge:after{
@@ -49,4 +55,8 @@ cursor: pointer;
 	/* text-align: center; */
 	font-weight: 900;
 	font-family: 'Montserrat', sans-serif;
+}
+#logout{
+    color: purple;
+    cursor: pointer;
 }

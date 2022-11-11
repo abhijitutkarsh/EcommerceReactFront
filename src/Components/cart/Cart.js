@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./Cart.css";
 function Cart(props) {
   const [values, setValues] = useState([]);
+  var [addVal, setAddVal] = useState(0);
+  // const [subVal, setsubVal] = useState(0);
 
   useEffect(() => {
     console.log(1);
@@ -46,6 +48,7 @@ function Cart(props) {
     return num;
   };
 
+  // var add, subtract
   var total = 0 ;
 
   for(var i = 0 ; i < values.length ; i++)
@@ -59,17 +62,15 @@ function Cart(props) {
   else
     return (
       <>
-        <HeaderHome
-          sess={props.sess}
-          cartCount={props.cartCount}
-          setCartCount={props.setCartCount}
-        />
-
+       
         <div className="cart transition is-open">
+          <span class="offset-header offset-header-even"><span>
           <Link to="/" className="btn btn-update" id="update">
             Continue Shopping
           </Link>
+            </span></span>
 
+          <span class="leftanima leftanima-even"><span>
           <div className="table">
             <div className="layout-inline row th">
               <div className="col col-pro">Product</div>
@@ -79,11 +80,13 @@ function Cart(props) {
               <div className="col">Total</div>
             </div>
 
-            {count.map((t, i) => (
+            {count.map((t, i) => {
+              addVal=quantity(t._id)
+              return(
               <div className="layout-inline row">
                 <div className="col col-pro layout-inline">
                   <img src={t.thumbnail} alt="kitten" id="productImg" />
-                  <p>{t.name}</p>
+                  <p><b>{t.name}</b></p>
                 </div>
 
                 <div className="col col-price col-numeric align-center ">
@@ -95,6 +98,7 @@ function Cart(props) {
                     className="qty qty-minus"
                     onClick={() => {
                       props.setCartCount(props.cartCount - 1);
+                      // addVal+=1
                       // console.log(props.sess.user.email);
                       var body = {
                         cartId: t._id,
@@ -121,7 +125,7 @@ function Cart(props) {
                   </btn>
                   <input
                     type="numeric"
-                    value={quantity(t._id)}
+                    value={addVal}
                     id="quantityVal"
                   />
                   <btn
@@ -163,7 +167,7 @@ function Cart(props) {
                   <p> ₹{t.price * quantity(t._id)}</p>
                 </div>
               </div>
-            ))}
+            )})}
 
             <div className="tf">
               <div className="row layout-inline">
@@ -186,10 +190,13 @@ function Cart(props) {
               </div>
             </div>
           </div>
+          </span></span>
+          <span class="offset-header offset-header-even"><span>
 
           <a href="#" className="btn btn-update" id="update">
             Checkout and Place order
           </a>
+          </span></span>
         </div>
       </>
     );
