@@ -86,8 +86,8 @@ function Home(props)
   if (props.error) {
     return <div><h1>Server is down</h1></div>;
   } else if (!props.isLoaded) {
-    return (<div class="loading-container">
-    <div class="loading"></div>
+    return (<div className="loading-container">
+    <div className="loading"></div>
     <div id="loading-text">loading</div>
 </div>)
   } else {
@@ -97,16 +97,16 @@ function Home(props)
 
 
 
-        <h1 id="quote" ><div class="offset-header">
-  <h1 class="hero-header">
-    {/* <span class="offset-header offset-header-odd"><span>Elevate your space</span></span> */}
-    <span class="offset-header offset-header-even"><span><b>Your<br/> First Choice</b></span></span>
+        <h1 id="quote" ><div className="offset-header">
+  <h1 className="hero-header">
+    {/* <span className="offset-header offset-header-odd"><span>Elevate your space</span></span> */}
+    <span className="offset-header offset-header-even"><span><b>Your<br/> First Choice</b></span></span>
   </h1>
 </div></h1>
   
 
       <form onSubmit={load}>
-<span class="anima anima-even"><span>
+<span className="anima anima-even"><span>
        {props.items.map((todo,index) => (
          <Item name={todo.name} thumbnail={todo.thumbnail} _id={todo._id} category={todo.category} price={todo.price} rating = {todo.rating} key={index} sess={props.sess}
          cartCount={props.cartCount} setCartCount={props.setCartCount} />
