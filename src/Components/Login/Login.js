@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import HeaderHome from "../Partials/HeaderHome";
+
 import "./Login.css";
 
-function Login() {
+function Login(props) {
 
   function loggedIn(e) {
     e.preventDefault();
@@ -42,7 +45,14 @@ function Login() {
       
   }, []);
   return (
+    <>
+        <HeaderHome sess={props.sess} cartCount={props.cartCount} setCartCount={props.setCartCount}/>
+        <br>
+        </br>
+        <br></br>
+
     <div className="container">
+      
       <div className="screen">
         <div className="screen__content">
           <form className="login" onSubmit={loggedIn}>
@@ -70,12 +80,16 @@ function Login() {
               <i className="button__icon fas fa-chevron-right"></i>
             </button>
           </form>
+        
+    
+
           <div className="social-login">
             <h3>log in via</h3>
             <div className="social-icons">
               <a href="/" className="social-login__icon fab fa-instagram"></a>
               <a href="/" className="social-login__icon fab fa-facebook"></a>
               <a href="/" className="social-login__icon fab fa-twitter"></a>
+              <Link to='/signup'><b>Register Now</b></Link>
             </div>
           </div>
         </div>
@@ -87,6 +101,8 @@ function Login() {
         </div>
       </div>
     </div>
+    
+    </>
   );
 }
 

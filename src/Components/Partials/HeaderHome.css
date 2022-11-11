@@ -42,3 +42,11 @@ cursor: pointer;
     top:-10px;
     opacity:0.9;
 }
+#nameinc{
+    /* font-size: 4rem; */
+
+	margin-left: 20px;
+	/* text-align: center; */
+	font-weight: 900;
+	font-family: 'Montserrat', sans-serif;
+}

@@ -109,7 +109,10 @@ function Home(props)
   if (error) {
     return <div><h1>Server is down</h1></div>;
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return (<div class="loading-container">
+    <div class="loading"></div>
+    <div id="loading-text">loading</div>
+</div>)
   } else {
 
     return (
@@ -117,6 +120,8 @@ function Home(props)
 
         <HeaderHome sess={props.sess} cartCount={props.cartCount} setCartCount={props.setCartCount}/>
 
+
+        <h1 id="quote"><b>Your<br/> First Choice</b></h1>
       <form onSubmit={load}>
        {items.map((todo,index) => (
          <Item name={todo.name} thumbnail={todo.thumbnail} _id={todo._id} category={todo.category} price={todo.price} rating = {todo.rating} key={index} sess={props.sess}
@@ -129,7 +134,7 @@ function Home(props)
              cartCount={props.cartCount} setCartCount={props.setCartCount} />
             })
           })}
-          <button type="submit">Load More</button>
+         <div id="divloadmore"> <button type="submit" id="loadMore">Load More</button></div>
           </form>
       </>
     );

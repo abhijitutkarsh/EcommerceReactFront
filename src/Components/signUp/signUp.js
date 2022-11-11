@@ -1,11 +1,14 @@
 import React from "react";
+import HeaderHome from "../Partials/HeaderHome";
 // import {Navigate} from 'react-router-dom'
+import { Link } from "react-router-dom";
+
 import './signUp.css'
 
 
 
 
-function SignUp(){
+function SignUp(props){
 	
 	// const [firstName, setFirstName] = useState('');
 	// const [lastName, setLastName ] = useState('');
@@ -41,6 +44,11 @@ function SignUp(){
 	
 
     return (
+		<>
+		    <HeaderHome sess={props.sess} cartCount={props.cartCount} setCartCount={props.setCartCount}/>
+        <br>
+        </br>
+        <br></br>
         <div className="container">
 	<div className="screen">
 		<div className="screen__content">
@@ -59,11 +67,12 @@ function SignUp(){
 				</button>				
 			</form>
 			<div className="social-login">
-				<h3>log in via</h3>
+				{/* <h3>log in via</h3> */}
 				<div className="social-icons">
 					{/* <a href="/" class="social-login__icon fab fa-instagram"></a>
 					<a href="/" class="social-login__icon fab fa-facebook"></a>
 					<a href="/" class="social-login__icon fab fa-twitter"></a> */}
+					<Link to='/login'><b>Login Now</b></Link>
 				</div>
 			</div>
 		</div>
@@ -77,6 +86,8 @@ function SignUp(){
 		</div>		
 	</div>
 </div>
+</>
+
     )
 }
 
