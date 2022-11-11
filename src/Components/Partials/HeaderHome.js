@@ -84,10 +84,10 @@ fetch('https://ecommerce370000.herokuapp.com/cartCount',{
       
       
       <Link to="/cart">
-      <i class="fa badge fa-lg" id="carti" value={props.cartCount}>&#xf07a;</i>
+      <i className="fa badge fa-lg" id="carti" value={props.cartCount}>&#xf07a;</i>
 
       </Link>
-      {/* <i id="carti" class="fa fa-shopping-cart"></i> */}
+      {/* <i id="carti" className="fa fa-shopping-cart"></i> */}
       <h2 id="user">
         Welcome {props.sess.isLoggedIn === true ? props.sess.user.firstname : "Guest"}
       </h2>

@@ -40,29 +40,29 @@ function ProductDetails(props)
  return (
 <>
 <div className="container">
-<div class="con">
-    <div class="box one">
-      <div class="details">
-        <div class="topic">{productDetail.description}</div>
+<div className="con">
+    <div className="box one">
+      <div className="details">
+        <div className="topic">{productDetail.description}</div>
           <p>Category: {productDetail.category}</p>
-        <div class="rating">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="far fa-star"></i>
-          <i class="far fa-star"></i>
+        <div className="rating">
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
+          <i className="far fa-star"></i>
+          <i className="far fa-star"></i>
         </div>
-          <div class="price-box">
-            {/* <div class="discount">₹ </div> */}
-            <div class="price">₹ {productDetail.price}</div>
+          <div className="price-box">
+            {/* <div className="discount">₹ </div> */}
+            <div className="price">₹ {productDetail.price}</div>
           </div>
       </div>
-      <div class="button1">
+      <div className="button1">
         <button onClick={()=>{
           // console.log(props.sess.user.email)
           props.setCartCount(props.cartCount+1)
@@ -90,16 +90,16 @@ function ProductDetails(props)
         }}>Add To Cart</button>
       </div>
     </div>
-    <div class="box two">
-      <div class="image-box">
-        <div class="image">
+    <div className="box two">
+      <div className="image-box">
+        <div className="image">
           <img src={data} alt=""/>
         </div>
-        <div class="info">
-          <div class="brand">{productDetail.brand}</div>
-          <div class="name">{productDetail.name}</div>
-          <div class="shipping">SHIPPING COST ₹ 500</div>
-          <div class="button2">
+        <div className="info">
+          <div className="brand">{productDetail.brand}</div>
+          <div className="name">{productDetail.name}</div>
+          <div className="shipping">SHIPPING COST ₹ 500</div>
+          <div className="button2">
             {/* <button>Login For More</button> */}
           </div>
           <div id="mainImg">
