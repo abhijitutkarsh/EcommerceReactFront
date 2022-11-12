@@ -6,6 +6,9 @@ import HeaderHome from './Components/Partials/HeaderHome';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Cart from './Components/cart/Cart';
 import ProductDetails from './Components/productDetail/ProductDetails';
+import PageNotFound from './Components/ErrorPages/pageNotFound';
+import PleaseVerify from './Components/ErrorPages/PleaseVerify';
+import NewPassword from './Components/newPass/NewPassword';
 
 function App() {
 
@@ -24,6 +27,7 @@ function App() {
         {
           // session = {isLoggedIn: false}
           setSess({isLoggedIn: false})
+
         }
 
         // else
@@ -34,7 +38,7 @@ function App() {
         console.log(err);
       });
   }, []);
-  const [cartCount, setCartCount] = useState('0')
+  const [cartCount, setCartCount] = useState(0)
   const [items, setItems] = useState([]);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -85,6 +89,11 @@ function App() {
       <Route path="/signup" element = {<SignUp sess={sess} setSess={setSess} cartCount={cartCount} setCartCount={setCartCount}/>}/>
       <Route path="/cart" element = {<Cart sess={sess} setSess={setSess} cartCount={cartCount} setCartCount={setCartCount}/>}/>
       <Route path="/productDetail/:productId" element ={<ProductDetails items ={items} sess={sess} setSess={setSess} cartCount={cartCount} setCartCount={setCartCount}/>}/>
+          {/* add 404 page  */}
+
+      <Route path="*" element = {<PageNotFound/>} />
+      <Route path = "/pleaseVerify" element={<PleaseVerify sess={sess} />}/>
+      <Route path = "/newPassword" element={<NewPassword />}/>
 
     </Routes>
   </Router>

@@ -78,7 +78,7 @@ let {} = useParams();
                   </a>
                 </div>
 
-                <h3 className="mb-0 font-weight-semibold">${todo.price}</h3>
+                <h3 className="mb-0 font-weight-semibold">₹ {todo.price}</h3>
 
                 <div>{ratingTime(todo.rating)}</div>
 

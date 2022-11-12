@@ -3,47 +3,13 @@ import '../App.css';
 import Item from "./item";
 import HeaderHome from "./Partials/HeaderHome";
 import './Home.css'
-
+import {useNavigate} from 'react-router-dom'
 
 
 
 function Home(props)
 {
- 
-
-  
- 
-
-  // useEffect(()=>{
-  //  getProducts();
-  // },[]);
-
-  // var [sess,setSess] = useState({});
-  // useEffect(() => {
-  //   fetch("http://localhost:3001/login", { credentials: "include" })
-  //     // .then(res => res.json())
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       if (data.isLoggedIn === true) 
-  //     { 
-  //       // session = data
-  //       setSess(data)
-  //     }
-  //       else
-  //       {
-  //         // session = {isLoggedIn: false}
-  //         setSess({isLoggedIn: false})
-  //       }
-
-  //       // else
-  // console.log(data)
-
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, []);
-
+  const navigate = useNavigate();
 
   const [startFrom , setStartFrom] = useState(5);
   var limit = 5;
@@ -81,8 +47,6 @@ function Home(props)
   }
   
 
-
-
   if (props.error) {
     return <div><h1>Server is down</h1></div>;
   } else if (!props.isLoaded) {
@@ -90,7 +54,13 @@ function Home(props)
     <div className="loading"></div>
     <div id="loading-text">loading</div>
 </div>)
-  } else {
+  } 
+  else
+  if(props.sess.user && props.sess.user.isVerified == false)
+  navigate('/PleaseVerify')
+  else
+  
+  {
 
     return (
       <>

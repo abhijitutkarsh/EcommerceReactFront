@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HeaderHome from "../Partials/HeaderHome";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link,useNavigate } from "react-router-dom";
 
 import "./Cart.css";
 function Cart(props) {
@@ -56,8 +56,14 @@ function Cart(props) {
     total+= values[i].price;
   }
 
+  let navigate = useNavigate();
+
   if (props.sess.isLoggedIn == false) {
     window.location.href = "/login";
+  }
+  else if(props.sess.user && props.sess.user.isVerified == false)
+  {
+    navigate('/')
   }
   else
     return (

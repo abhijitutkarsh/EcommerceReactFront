@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import HeaderHome from "../Partials/HeaderHome";
-
+import {useNavigate} from 'react-router-dom'
 import "./Login.css";
 
 function Login(props) {
@@ -44,6 +44,13 @@ function Login(props) {
 			  })
       
   }, []);
+
+let navigate = useNavigate();
+if(props.sess.user)
+{
+navigate('/')
+}
+else
   return (
     <>
         {/* <br> */}
