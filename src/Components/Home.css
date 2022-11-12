@@ -392,3 +392,77 @@ body {
 #divloadmore{
 	text-align: center;
 }
+/* ///////////////////////////////////////// */
+
+	span.anima {
+	  display: block;
+	  overflow: hidden;
+	}
+	span.anima > span {
+	  animation-name: slidefor;
+	  animation-duration: 2s;
+	  animation-timing-function: ease-in;
+	  display: block;
+	}
+	.anima-odd > span {
+	  /* text-align: left; */
+	  animation-delay: 0s;
+	  animation-fill-mode: forwards;
+	}
+	.anima-even > span {
+	  /* text-align: right; */
+	  animation-delay: 50ms;
+	  animation-fill-mode: both;
+	}
+  
+	@keyframes slidefor {
+	  0%,
+	  50% {
+		transform: translateX(100%);
+		opacity: 0;
+	  }
+	   
+	  60%,
+	  100% {
+		transform: translateY(0);
+		opacity: 1;
+	  
+	  }
+	}
+	/* //////////////////////////////////////////// */
+
+	span.leftanima {
+		display: block;
+		overflow: hidden;
+	  }
+	  span.leftanima > span {
+		animation-name: slidefor;
+		animation-duration: 2s;
+		animation-timing-function: ease-in;
+		display: block;
+	  }
+	  .leftanima-odd > span {
+		/* text-align: left; */
+		animation-delay: 0s;
+		animation-fill-mode: forwards;
+	  }
+	  .leftanima-even > span {
+		/* text-align: right; */
+		animation-delay: 50ms;
+		animation-fill-mode: both;
+	  }
+	
+	  @keyframes slidefor {
+		0%,
+		50% {
+		  transform: translateX(-100%);
+		  opacity: 0;
+		}
+		 
+		60%,
+		100% {
+		  transform: translateY(0);
+		  opacity: 1;
+		
+		}
+	  }
