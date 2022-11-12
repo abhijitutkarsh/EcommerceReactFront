@@ -93,7 +93,7 @@ function ProductDetails(props)
     <div className="box two">
       <div className="image-box">
         <div className="image">
-          <img src={data} alt=""/>
+          <img src={data} alt="data" />
         </div>
         <div className="info">
           <div className="brand">{productDetail.brand}</div>
