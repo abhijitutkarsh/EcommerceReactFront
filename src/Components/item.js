@@ -23,7 +23,7 @@ function Item(todo) {
       "email": todo.sess.user.email,
       "cartId": todo._id
     }
-    fetch("https://ecommerce370000.herokuapp.com/cart", {
+    fetch("https://ecommercenode-8uip.onrender.com/cart", {
       method: "POST",
       body: JSON.stringify(body),
       headers: {

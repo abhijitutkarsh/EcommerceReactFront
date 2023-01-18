@@ -14,7 +14,7 @@ function App() {
 
   var [sess,setSess] = useState({});
   useEffect(() => {
-    fetch("https://ecommerce370000.herokuapp.com/login", { credentials: "include" })
+    fetch("https://ecommercenode-8uip.onrender.com/login", { credentials: "include" })
       // .then(res => res.json())
       .then((response) => response.json())
       .then((data) => {
@@ -44,7 +44,7 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   // function getProducts(){
  useEffect(()=>{
-  fetch("https://ecommerce370000.herokuapp.com/product")
+  fetch("https://ecommercenode-8uip.onrender.com/product")
   .then(res => res.json())
   .then(
     (result) => {
@@ -71,18 +71,11 @@ function App() {
 
 
       		 <Router>
-    {/* <div className="nav-bar">
-      <Link to="/">Home</Link>
-      <Link to="/Login">Login</Link>
-      <Link to="/signup">Signup</Link>
-
-     
-    </div> */}
+ 
         <HeaderHome sess={sess} cartCount={cartCount} setCartCount={setCartCount}/>
 
     <Routes>
-      {/* Exact match to avoid 
-          overriding other routes */}
+    
       <Route exact path="/" element={<Home error={error} isLoaded={isLoaded} items = {items} sess={sess} setSess={setSess} cartCount={cartCount} setCartCount={setCartCount}/>}/>
      
       <Route path="/login" element = {<Login sess={sess} setSess={setSess} cartCount={cartCount} setCartCount={setCartCount}/>}/>

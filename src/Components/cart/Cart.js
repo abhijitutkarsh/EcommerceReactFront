@@ -14,7 +14,7 @@ function Cart(props) {
       // console.log(props.sess.user)
       var data = { email: props.sess.user.email };
       // var body = {"email": props.sess.user.email}
-      fetch("https://ecommerce370000.herokuapp.com/cartData", {
+      fetch("https://ecommercenode-8uip.onrender.com/cartData", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {

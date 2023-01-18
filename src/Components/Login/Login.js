@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect ,useState} from "react";
 import { Link } from "react-router-dom";
 import HeaderHome from "../Partials/HeaderHome";
 import {useNavigate} from 'react-router-dom'
@@ -6,6 +6,9 @@ import "./Login.css";
 
 function Login(props) {
 
+  const [success, setSuccess]= useState('');
+let navigate = useNavigate();
+  
   function loggedIn(e) {
     e.preventDefault();
     // console.log(e.target[0].value)
@@ -14,7 +17,7 @@ function Login(props) {
       password: e.target[1].value,
     };
     console.log(data);
-    fetch("https://ecommerce370000.herokuapp.com/login", {
+    fetch("https://ecommercenode-8uip.onrender.com/login", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -25,19 +28,26 @@ function Login(props) {
 	.then((response) => response.json())
 	.then((data) => {
 		console.log(data)
+    if(data)
 		window.location.href = '/'
+    // navigate('/')
+    else
+    {
+      setSuccess("Incorrect username or password")
+    }
 	})
       .catch((err) => {
         console.log(err);
       });
   }
   useEffect(() => {
-    fetch("https://ecommerce370000.herokuapp.com/login", { credentials: "include" })
+    fetch("https://ecommercenode-8uip.onrender.com/login", { credentials: "include" })
       // .then(res => res.json())
       .then((response) => response.json())
 			 .then((data) => {
 		if(data.loggedIn === true)
-		window.location.href = '/'
+		navigate('/')
+   
 			 })
 			 .catch((err) => {
 				console.log(err);
@@ -45,7 +55,6 @@ function Login(props) {
       
   }, []);
 
-let navigate = useNavigate();
 if(props.sess.user)
 {
 navigate('/')
@@ -83,8 +92,10 @@ else
             </div>
             <button className="button login__submit" type="submit">
               <span className="button__text">Log In Now</span>
+
               <i className="button__icon fas fa-chevron-right"></i>
             </button>
+              <span className="button__text">{success}</span>
           </form>
         
     

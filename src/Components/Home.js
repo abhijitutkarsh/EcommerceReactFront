@@ -23,7 +23,7 @@ function Home(props)
       text: startFrom
     }
     // console.log(data.text)
-    fetch('https://ecommerce370000.herokuapp.com/product', {
+    fetch('https://ecommercenode-8uip.onrender.com/product', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {

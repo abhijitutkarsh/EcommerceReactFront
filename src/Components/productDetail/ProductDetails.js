@@ -12,7 +12,7 @@ function ProductDetails(props)
   useEffect(()=>{
     console.log(productId)
   
-    fetch('https://ecommerce370000.herokuapp.com/productid',{
+    fetch('https://ecommercenode-8uip.onrender.com/productid',{
     method: "POST",
     body: JSON.stringify(productId),
     headers: {

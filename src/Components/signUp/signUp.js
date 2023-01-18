@@ -25,7 +25,7 @@ function SignUp(props){
 			password:e.target[3].value 
 		  }
 		//   console.log(data)
-		  fetch('https://ecommerce370000.herokuapp.com/signup', {
+		  fetch('https://ecommercenode-8uip.onrender.com/signup', {
 			method: 'POST',
 			body: JSON.stringify(data),
 			headers: {
@@ -34,7 +34,8 @@ function SignUp(props){
 		  })
 			 .then((response) => response.json())
 			 .then((data) => {
-		window.location.href='/login';
+		// window.location.href='/login';
+		console.log(data)
 				
 								 })
 			 .catch((err) => {

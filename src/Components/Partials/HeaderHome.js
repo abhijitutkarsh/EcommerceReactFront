@@ -35,7 +35,7 @@ function HeaderHome(props) {
   function logout()
   {
     console.log("preesed")
-    fetch('https://ecommerce370000.herokuapp.com/logout',{credentials: "include"})
+    fetch('https://ecommercenode-8uip.onrender.com/logout',{credentials: "include"})
     .then(res => res.json())
     .then(
       (result) => {
@@ -95,7 +95,7 @@ fetch('https://ecommerce370000.herokuapp.com/cartCount',{
       <h3 id="userLogin">{loginOrNot}</h3>
       <span id="header">
         {/* <h2 id="user"> {session.loggedIn===true?"logout":"login"}</h2> */}
-        <h1 id ="nameinc"><b><Link to='/'>jityaCart</Link></b></h1>
+        <h1 id ="nameinc"><b><Link to='/'>NOME</Link></b></h1>
         {/* <img src="<%= user.profile_pic %>"/> */}
         {/* <!-- <img src="/p"/> --> */}
         <link
