@@ -9,6 +9,7 @@ import ProductDetails from './Components/productDetail/ProductDetails';
 import PageNotFound from './Components/ErrorPages/pageNotFound';
 import PleaseVerify from './Components/ErrorPages/PleaseVerify';
 import NewPassword from './Components/newPass/NewPassword';
+import Footer from './Components/Footer';
 
 function App() {
 
@@ -89,6 +90,7 @@ function App() {
       <Route path = "/newPassword" element={<NewPassword />}/>
 
     </Routes>
+    <Footer />
   </Router>
     </div>
   );

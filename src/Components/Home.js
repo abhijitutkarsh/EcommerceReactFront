@@ -4,7 +4,7 @@ import Item from "./item";
 import HeaderHome from "./Partials/HeaderHome";
 import './Home.css'
 import {useNavigate} from 'react-router-dom'
-
+import Img from './assets/img2.png'
 
 
 function Home(props)
@@ -65,16 +65,16 @@ function Home(props)
     return (
       <>
 
-
+<div style={{display: "flex" }}>
 
         <h1 id="quote" ><div className="offset-header">
   <h1 className="hero-header">
     {/* <span className="offset-header offset-header-odd"><span>Elevate your space</span></span> */}
-    <span className="offset-header offset-header-even"><span><b>Your<br/> First Choice</b></span></span>
+    <span className="offset-header offset-header-even"><span><b> Place where<br/> all your needs<br/> meet</b></span></span>
   </h1>
 </div></h1>
-  
-
+<img src={Img} className="move-2" alt="" style={{zIndex: '1', height: "500px", position: "relative", left: "10%" }} />
+</div>
       <form onSubmit={load}>
 <span className="anima anima-even"><span>
        {props.items.map((todo,index) => (

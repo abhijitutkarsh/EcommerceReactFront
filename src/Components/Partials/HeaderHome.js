@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./HeaderHome.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Img from '../assets/logo1.png'
 
 function HeaderHome(props) {
   var session ;
@@ -89,14 +90,14 @@ fetch('https://ecommerce370000.herokuapp.com/cartCount',{
       </Link>
       {/* <i id="carti" className="fa fa-shopping-cart"></i> */}
       <h2 id="user">
-        Welcome {props.sess.isLoggedIn === true ? props.sess.user.firstname : "Guest"}
+       <b> Welcome {props.sess.isLoggedIn === true ? props.sess.user.firstname : "Guest"}</b>
       </h2>
       
       <h3 id="userLogin">{loginOrNot}</h3>
       <span id="header">
         {/* <h2 id="user"> {session.loggedIn===true?"logout":"login"}</h2> */}
-        <h1 id ="nameinc"><b><Link to='/'>NOME</Link></b></h1>
-        {/* <img src="<%= user.profile_pic %>"/> */}
+        {/* <h1 id ="nameinc"><b><Link to='/'>NOME</Link></b></h1> */}
+        <img src={Img} style={{height: "60px", width: "200px"}} />
         {/* <!-- <img src="/p"/> --> */}
         <link
           rel="stylesheet"

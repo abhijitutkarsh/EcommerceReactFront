@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;600&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins',sans-serif;
+  font-family: 'Roboto Slab', serif;
 }
 /* body{
   display: flex;
@@ -87,12 +87,16 @@ body:before{
 }
 .box.one .button1{
   margin-top: 55px;
+  border-radius: 30px;
+
 }
 .box.one .button1 button{
   outline: none;
+  border-radius: 30px;
+
   border:none;
   padding: 8px 16px;
-  border-radius: 6px;
+  /* border-radius: 6px; */
   font-size: 18px;
   font-weight: 500;
   color: #fff;
@@ -102,6 +106,8 @@ body:before{
 }
 .button1 button:hover{
   transform: scale(0.98);
+  border-radius: 30px;
+
 }
 .con .box.two .image{
   position: relative;
@@ -146,7 +152,7 @@ body:before{
   outline: none;
   color: #fff;
   border: 1px solid #fff;
-  border-radius: 12px;
+  border-radius: 30px;
   padding: 8px 17px;
   background: transparent;
   font-size: 15px;
