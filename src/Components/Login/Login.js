@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import HeaderHome from "../Partials/HeaderHome";
 import {useNavigate} from 'react-router-dom'
 import "./Login.css";
-
+import Img from '../assets/logo1.png'
 function Login(props) {
 
   const [success, setSuccess]= useState('');

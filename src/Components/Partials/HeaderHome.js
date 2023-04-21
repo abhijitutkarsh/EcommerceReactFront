@@ -90,7 +90,7 @@ fetch('https://ecommerce370000.herokuapp.com/cartCount',{
       </Link>
       {/* <i id="carti" className="fa fa-shopping-cart"></i> */}
       <h2 id="user">
-       <b> Welcome {props.sess.isLoggedIn === true ? props.sess.user.firstname : "Guest"}</b>
+        Welcome {props.sess.isLoggedIn === true ? props.sess.user.firstname : "Guest"}
       </h2>
       
       <h3 id="userLogin">{loginOrNot}</h3>

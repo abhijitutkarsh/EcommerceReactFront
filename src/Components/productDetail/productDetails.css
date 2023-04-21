@@ -5,14 +5,7 @@
   box-sizing: border-box;
   font-family: 'Roboto Slab', serif;
 }
-/* body{
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-  background: #e6e6e6;
-} */
+
 ::selection{
   background: #fee6eb;
 }
@@ -23,7 +16,6 @@ body:before{
   height: 100%;
   clip-path: circle(55% at right 30%);
   background: #e6e6e6;
-  /* z-index: 0; */
   background-image: linear-gradient( 0deg,  #fd9bb0 10%, #F6416C 100%);
 }
 .con{
@@ -96,7 +88,6 @@ body:before{
 
   border:none;
   padding: 8px 16px;
-  /* border-radius: 6px; */
   font-size: 18px;
   font-weight: 500;
   color: #fff;
@@ -161,5 +152,4 @@ body:before{
 }
 #mainImg img{
   height:20px;
-  /* width:  */
 }

@@ -76,10 +76,13 @@ function Home(props)
 <img src={Img} className="move-2" alt="" style={{zIndex: '1', height: "500px", position: "relative", left: "10%" }} />
 </div>
       <form onSubmit={load}>
-<span className="anima anima-even"><span>
+<span 
+// className="anima anima-even" 
+><span>
        {props.items.map((todo,index) => (
          <Item name={todo.name} thumbnail={todo.thumbnail} _id={todo._id} category={todo.category} price={todo.price} rating = {todo.rating} key={index} sess={props.sess}
-         cartCount={props.cartCount} setCartCount={props.setCartCount} />
+         cartCount={props.cartCount} setCartCount={props.setCartCount}  
+         />
          ))}
 
        	{children.map((t, i)=>{
