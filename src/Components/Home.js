@@ -68,10 +68,8 @@ function Home(props)
 <div style={{display: "flex" }}>
 
         <h1 id="quote" ><div className="offset-header">
-  <h1 className="hero-header">
-    {/* <span className="offset-header offset-header-odd"><span>Elevate your space</span></span> */}
-    <span className="offset-header offset-header-even"><span><b> Place where<br/> all your needs<br/> meet</b></span></span>
-  </h1>
+  {/* <h1 className="hero-header">
+     </h1> */}
 </div></h1>
 <img src={Img} className="move-2" alt="" style={{zIndex: '1', height: "500px", position: "relative", left: "10%" }} />
 </div>
@@ -88,9 +86,10 @@ function Home(props)
              cartCount={props.cartCount} setCartCount={props.setCartCount} />
             })
           })}
-         <div id="divloadmore"> <button type="submit" id="loadMore">Load More</button></div>
+         
   </span></span>
           </form>
+          <div id="divloadmore"> <button type="submit" id="loadMore">Load More</button></div>
 
       </>
     );

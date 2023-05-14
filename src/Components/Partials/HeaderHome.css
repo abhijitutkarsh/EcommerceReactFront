@@ -8,18 +8,42 @@
     font-size: 35px;
 cursor: pointer;
     /* float: right; */
-    right: 5%;
-    margin-right:18px;
+    right: 2%;
+    margin-right:22px;
+    margin-top: 20px;
+}
+#carti1{
+    position: absolute;
+    font-size: 30px;
+    color: red;
+cursor: pointer;
+    float: right;
+    right: 3%;
+    margin-right:-26px;
+    margin-top: 20px;
     /* margin-top: -32px; */
 }
 #user{
+    display: flex;
     cursor: pointer;
     margin-right:18px;
     /* z-index: 9; */
     position: absolute;
     /* float:right; */
-    right:10%
-    /* margin-top: -32px; */
+    right:7%;
+    margin-top: 20px;
+}
+#user1{
+    display: flex;
+    gap: 70px;
+    cursor: pointer;
+    margin-right:18px;
+    /* z-index: 9; */
+    position: absolute;
+    /* float:right; */
+    /* padding-right: 20px; */
+    right:71%;
+    margin-top: 20px;
 }
 #userLogin{
     font-weight: 600;
@@ -32,21 +56,22 @@ cursor: pointer;
     margin-top: 26px;
 }
 .head{
-    /* background-color: rgb(130, 172, 250); */
+    background-color: white;
     height: 70px;
-    /* z-index: 9; */
+    /* padding-top: 10px; */
+    /* z-index: 3; */
 }
 
 .badge:after{
     content:attr(value);
-    font-size:20px;
+    font-size:14px;
     color: #fff;
     background: red;
     border-radius:50%;
     padding: 0 5px;
     position:relative;
     left:-8px;
-    top:-10px;
+    top:-17px;
     opacity:0.9;
 }
 #nameinc{

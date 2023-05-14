@@ -47,22 +47,22 @@ let {} = useParams();
       {/* <form onClick={addCart}> */}
         <br />
         <div className="row">
-          <div className="col-md-4 mt-2">
-            <div className="card">
+          {/* <div className="col-md-4 mt-2"> */}
+            {/* <div className="card"> */}
               <div className="card-body">
-                <div className="card-img-actions">
+                {/* <div className="card-img-actions"> */}
                  <img
                     src={todo.thumbnail}
-                    className="card-img img-fluid"
-                    width="96"
-                    height="350"
+                    // className="card-img"
+                    width="300"
+                    height="300"
                     alt=""
                     onClick={()=>{
                       Navigate(`/productDetail/${todo._id}`,{state:{todo: todo}})
                     }}
                   />
                  
-                </div>
+                {/* </div> */}
               </div>
 
               <div className="card-body bg-light text-center">
@@ -89,8 +89,8 @@ let {} = useParams();
                   <h5 className="font-weight-semibold mb-2">Add to cart</h5>
                 </button>
               </div>
-            </div>
-          </div>
+            {/* </div> */}
+          {/* </div> */}
         </div>
         <br />
       {/* </form> */}

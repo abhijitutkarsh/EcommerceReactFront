@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./HeaderHome.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Img from '../assets/logo1.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCamera } from '@fortawesome/free-solid-svg-icons';
+
 
 function HeaderHome(props) {
   var session ;
@@ -81,33 +84,40 @@ fetch('https://ecommerce370000.herokuapp.com/cartCount',{
 
   return (
     <div className="head">
+
       <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet" />
       
       
       <Link to="/cart">
       <i className="fa badge fa-lg" id="carti" value={props.cartCount}>&#xf07a;</i>
-
+      <FontAwesomeIcon icon={faCamera} id="carti1" />
+      
+      {/* <FontAwesomeIcon icon="fa-solid fa-camera" beatFade style={{color: "#e40733",}} /> */}
       </Link>
       {/* <i id="carti" className="fa fa-shopping-cart"></i> */}
+      <h2 id="user1">MEN &nbsp;&nbsp;WOMEN&nbsp;&nbsp; KIDS</h2>
       <h2 id="user">
-       <b> Welcome {props.sess.isLoggedIn === true ? props.sess.user.firstname : "Guest"}</b>
+     
+         {props.sess.isLoggedIn === true ? props.sess.user.username : ""} &nbsp;{loginOrNot}
+    
       </h2>
+
       
-      <h3 id="userLogin">{loginOrNot}</h3>
       <span id="header">
         {/* <h2 id="user"> {session.loggedIn===true?"logout":"login"}</h2> */}
         {/* <h1 id ="nameinc"><b><Link to='/'>NOME</Link></b></h1> */}
-        <img src={Img} style={{height: "60px", width: "200px"}} />
+        <img src={Img} style={{height: "60px", width: "150px", paddingTop: "10px", paddingLeft: "10px"}} />
         {/* <!-- <img src="/p"/> --> */}
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         />
-
+        
         {/* <a href="/logout">logout</a> */}
 
         <br></br>
       </span>
+
     </div>
   );
 }
