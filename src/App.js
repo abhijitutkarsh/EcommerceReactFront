@@ -90,7 +90,7 @@ function App() {
       <Route path = "/newPassword" element={<NewPassword />}/>
 
     </Routes>
-    <Footer />
+    {/* <Footer /> */}
   </Router>
     </div>
   );
